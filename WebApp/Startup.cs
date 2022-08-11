@@ -15,6 +15,8 @@ using Application;
 using AutoMapper;
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
+using DomainServices.Implementation;
+using DomainServices.Interfaces;
 
 namespace WebApp
 {
@@ -40,6 +42,8 @@ namespace WebApp
             services.AddScoped<IOrderService, OrderService>();
             services.AddDbContext<AppDbContext>(builder =>
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
+            services.AddScoped<IOrderDomainService, OrderDomainService>();
+
             services.AddAutoMapper(typeof(MapperProfile));
         }
 
