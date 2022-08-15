@@ -4,16 +4,17 @@ using AutoMapper;
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using DomainServices.Interfaces;
+using DataAccess.Intereface;
 
 namespace Application
 {
     public class OrderService : IOrderService
     {
-        private readonly AppDbContext _dbContext;
+        private readonly IDbContext _dbContext;
         private readonly IMapper _mapper;
         private readonly IOrderDomainService _orderDomainService;
 
-        public OrderService(AppDbContext dbContext, IMapper mapper, IOrderDomainService orderDomainService)
+        public OrderService(IDbContext dbContext, IMapper mapper, IOrderDomainService orderDomainService)
         {
             _dbContext = dbContext;
             _mapper = mapper;

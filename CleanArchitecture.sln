@@ -3,19 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{359B21EB-8088-4B94-84B6-8928D0FDE939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{359B21EB-8088-4B94-84B6-8928D0FDE939}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{78396805-4E46-4026-B788-147969F8D9C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{78396805-4E46-4026-B788-147969F8D9C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{7ADDE3C8-8AE3-40C6-A47A-4AA9C06A39F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{7ADDE3C8-8AE3-40C6-A47A-4AA9C06A39F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{AA086F77-6388-407D-B04D-2A92F958757D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{AA086F77-6388-407D-B04D-2A92F958757D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj", "{C7347E7F-0782-4C8D-B15B-079378236569}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{C7347E7F-0782-4C8D-B15B-079378236569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainServices.Interfaces", "DomainServices.Interfaces\DomainServices.Interfaces.csproj", "{5B8EB696-EBA7-4409-9D1A-30139C9548F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainServices.Interfaces", "DomainServices.Interfaces\DomainServices.Interfaces.csproj", "{5B8EB696-EBA7-4409-9D1A-30139C9548F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainServices.Implementation", "DomainServices.Implementation\DomainServices.Implementation.csproj", "{E92BD307-4A39-4D54-8FFB-E6F0E9ED4DB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainServices.Implementation", "DomainServices.Implementation\DomainServices.Implementation.csproj", "{E92BD307-4A39-4D54-8FFB-E6F0E9ED4DB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Utilis", "0 Utilis", "{5E66AA25-CE78-4143-B390-88414A83E18B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Entities", "1 Entities", "{5B834B8F-7246-4FE6-B2FC-CE77BABABCC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Intereface", "DataAccess.Intereface\DataAccess.Intereface.csproj", "{336E26A8-6157-48AA-8BCC-D9304048EF3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,9 +57,19 @@ Global
 		{E92BD307-4A39-4D54-8FFB-E6F0E9ED4DB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E92BD307-4A39-4D54-8FFB-E6F0E9ED4DB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E92BD307-4A39-4D54-8FFB-E6F0E9ED4DB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{336E26A8-6157-48AA-8BCC-D9304048EF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336E26A8-6157-48AA-8BCC-D9304048EF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336E26A8-6157-48AA-8BCC-D9304048EF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336E26A8-6157-48AA-8BCC-D9304048EF3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{359B21EB-8088-4B94-84B6-8928D0FDE939} = {5B834B8F-7246-4FE6-B2FC-CE77BABABCC5}
+		{C7347E7F-0782-4C8D-B15B-079378236569} = {5E66AA25-CE78-4143-B390-88414A83E18B}
+		{5B8EB696-EBA7-4409-9D1A-30139C9548F6} = {5B834B8F-7246-4FE6-B2FC-CE77BABABCC5}
+		{E92BD307-4A39-4D54-8FFB-E6F0E9ED4DB1} = {5B834B8F-7246-4FE6-B2FC-CE77BABABCC5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {50EFF866-D6DB-445F-BF87-59AB69F37CF7}

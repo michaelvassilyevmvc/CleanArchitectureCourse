@@ -1,22 +1,16 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Application;
 using AutoMapper;
-using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using DomainServices.Implementation;
 using DomainServices.Interfaces;
+using DataAccess.Intereface;
+using DataAccess;
 
 namespace WebApp
 {
@@ -40,7 +34,7 @@ namespace WebApp
             });
 
             services.AddScoped<IOrderService, OrderService>();
-            services.AddDbContext<AppDbContext>(builder =>
+            services.AddDbContext<IDbContext, AppDbContext>(builder =>
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
             services.AddScoped<IOrderDomainService, OrderDomainService>();
 
