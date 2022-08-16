@@ -4,7 +4,7 @@ using AutoMapper;
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using DomainServices.Interfaces;
-using DataAccess.Intereface;
+using DataAccess.Interefaces;
 
 namespace Application
 {

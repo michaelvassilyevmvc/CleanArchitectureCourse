@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DataAccess.Intereface
+namespace DataAccess.Interefaces 
 {
     public interface IDbContext
     {
-        public DbSet<Order> Orders { get;  }
+        public DbSet<Order> Orders { get; }
 
         public DbSet<Product> Products { get; }
 

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using DataAccess.Intereface;
+﻿using DataAccess.Interefaces;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 
 namespace DataAccess
 {
@@ -20,7 +20,7 @@ namespace DataAccess
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<OrderItem>().HasKey(x => new {x.OrderId, x.ProductId});
+            modelBuilder.Entity<OrderItem>().HasKey(x => new { x.OrderId, x.ProductId });
 
             modelBuilder.Entity<Product>().HasData(new List<Product>()
             {

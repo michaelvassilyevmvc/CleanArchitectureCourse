@@ -1,16 +1,20 @@
+using Application;
+using AutoMapper;
+using DataAccess;
+using DataAccess.Interefaces;
+using DomainServices.Implementation;
+using DomainServices.Interfaces;
+using Email.Interfaces;
+using Infrastructure.Implementation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Application;
-using AutoMapper;
-using Microsoft.EntityFrameworkCore;
-using DomainServices.Implementation;
-using DomainServices.Interfaces;
-using DataAccess.Intereface;
-using DataAccess;
+using WebApp.Interfaces;
+using WebApp.Services;
 
 namespace WebApp
 {
@@ -26,18 +30,26 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApp", Version = "v1" });
             });
 
-            services.AddScoped<IOrderService, OrderService>();
-            services.AddDbContext<IDbContext, AppDbContext>(builder =>
-                builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
+            //Domain
             services.AddScoped<IOrderDomainService, OrderDomainService>();
 
+            //Infrastructure
+
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<IEmailService, EmailService>();
+            services.AddDbContext<IDbContext, AppDbContext>(builder =>
+                builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
+
+            //Application
+            services.AddScoped<IOrderService, OrderService>();
+
+            //Framework
             services.AddAutoMapper(typeof(MapperProfile));
         }
 
