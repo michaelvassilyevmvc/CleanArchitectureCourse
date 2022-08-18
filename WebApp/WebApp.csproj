@@ -9,8 +9,12 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.0" NoWarn="NU1605" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.0" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -22,6 +26,8 @@
     <ProjectReference Include="..\ApplicationServices.Interfaces\ApplicationServices.Interfaces.csproj" />
     <ProjectReference Include="..\Controllers\Mobile.Controllers.csproj" />
     <ProjectReference Include="..\DataAccess\DataAccess.MsSql.csproj" />
+    <ProjectReference Include="..\Delivery.Company\Delivery.Company.csproj" />
+    <ProjectReference Include="..\Delivery.Interfaces\Delivery.Interfaces.csproj" />
     <ProjectReference Include="..\DomainServices.Implementation\DomainServices.Implementation.csproj" />
     <ProjectReference Include="..\Email.Implementation\Email.Handler.csproj" />
     <ProjectReference Include="..\UseCases\Mobile.UseCases.csproj" />

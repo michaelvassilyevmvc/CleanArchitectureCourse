@@ -4,6 +4,8 @@ using ApplicationServices.Interfaces;
 using AutoMapper;
 using DataAccess;
 using DataAccess.Interefaces;
+using Delivery.Company;
+using Delivery.Interfaces;
 using DomainServices.Implementation;
 using DomainServices.Interfaces;
 using Email.Interfaces;
@@ -43,7 +45,7 @@ namespace WebApp
             services.AddScoped<IOrderDomainService, OrderDomainService>();
 
             //Infrastructure
-
+            services.AddScoped<IDeliveryService, DeliveryService>();
             services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddDbContext<IDbContext, AppDbContext>(builder =>
