@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using UseCases.Order.Queries.GetById;
 using UserCases.Order.Commands.CreateOrder;
 
-namespace WebApp.Controllers
+namespace Controllers
 {
     [ApiController]
     [Route("[controller]")]
