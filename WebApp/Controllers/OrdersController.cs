@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Application;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using Application;
+using UseCases.Order.Queries.GetById;
+using UserCases.Order.Commands.CreateOrder;
 
 namespace WebApp.Controllers
 {
@@ -12,18 +11,27 @@ namespace WebApp.Controllers
     [Route("[controller]")]
     public class OrdersController : ControllerBase
     {
-        private readonly IOrderService _orderService;
+        private readonly ISender _sender;
 
-        public OrdersController(IOrderService orderService)
+        
+
+        public OrdersController(ISender sender)
         {
-            _orderService = orderService;
+            _sender = sender;
         }
 
         [HttpGet("{id}")]
         public async Task<OrderDto> Get(int id)
         {
-            var result = await _orderService.GetByIdAsync(id);
+            var result = await _sender.Send(new GetOrderByIdQuery { Id = id });
             return result;
+        }
+
+        [HttpPost]
+        public async Task<int> Create([FromBody]CreateOrderDto dto)
+        {
+            var id = await _sender.Send(new CreateOrderCommand { Dto = dto });
+            return id;
         }
     }
 }

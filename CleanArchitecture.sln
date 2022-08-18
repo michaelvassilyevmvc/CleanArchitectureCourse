@@ -1,13 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.2.32630.192
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{359B21EB-8088-4B94-84B6-8928D0FDE939}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{78396805-4E46-4026-B788-147969F8D9C4}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{7ADDE3C8-8AE3-40C6-A47A-4AA9C06A39F7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "WebApp\WebApp.csproj", "{AA086F77-6388-407D-B04D-2A92F958757D}"
 EndProject
@@ -27,11 +25,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Infrastructure.Interfaces
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Implementation", "Infrastructure.Implementation", "{5A22CF7B-D368-4C0B-83DF-7DF403717620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email.Interfaces", "Email.Interfaces\Email.Interfaces.csproj", "{75D73B0E-E287-4801-A366-D09F02F8C1A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Email.Interfaces", "Email.Interfaces\Email.Interfaces.csproj", "{75D73B0E-E287-4801-A366-D09F02F8C1A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Interfaces", "WebApp.Interfaces\WebApp.Interfaces.csproj", "{FBFC5073-0328-41A3-B512-B48B33BB2292}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.Interfaces", "WebApp.Interfaces\WebApp.Interfaces.csproj", "{FBFC5073-0328-41A3-B512-B48B33BB2292}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email.Implementation", "Email.Implementation\Email.Implementation.csproj", "{3AC8C653-2D62-4FF5-B378-0A968CC5D135}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Email.Implementation", "Email.Implementation\Email.Implementation.csproj", "{3AC8C653-2D62-4FF5-B378-0A968CC5D135}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UseCases", "UseCases\UseCases.csproj", "{9E58A5E1-1B6F-412D-BA53-5D7241D823C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,6 @@ Global
 		{78396805-4E46-4026-B788-147969F8D9C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78396805-4E46-4026-B788-147969F8D9C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78396805-4E46-4026-B788-147969F8D9C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7ADDE3C8-8AE3-40C6-A47A-4AA9C06A39F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7ADDE3C8-8AE3-40C6-A47A-4AA9C06A39F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7ADDE3C8-8AE3-40C6-A47A-4AA9C06A39F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7ADDE3C8-8AE3-40C6-A47A-4AA9C06A39F7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA086F77-6388-407D-B04D-2A92F958757D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA086F77-6388-407D-B04D-2A92F958757D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA086F77-6388-407D-B04D-2A92F958757D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,6 +79,10 @@ Global
 		{3AC8C653-2D62-4FF5-B378-0A968CC5D135}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AC8C653-2D62-4FF5-B378-0A968CC5D135}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AC8C653-2D62-4FF5-B378-0A968CC5D135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E58A5E1-1B6F-412D-BA53-5D7241D823C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E58A5E1-1B6F-412D-BA53-5D7241D823C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E58A5E1-1B6F-412D-BA53-5D7241D823C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E58A5E1-1B6F-412D-BA53-5D7241D823C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,6 +6,8 @@ using DomainServices.Implementation;
 using DomainServices.Interfaces;
 using Email.Interfaces;
 using Infrastructure.Implementation;
+using Infrastructure.Interefaces.WebApp;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -13,7 +15,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using WebApp.Interfaces;
+using UserCases.Order.Commands.CreateOrder;
 using WebApp.Services;
 
 namespace WebApp
@@ -47,7 +49,7 @@ namespace WebApp
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
 
             //Application
-            services.AddScoped<IOrderService, OrderService>();
+            services.AddMediatR(typeof(CreateOrderCommand));
 
             //Framework
             services.AddAutoMapper(typeof(MapperProfile));
