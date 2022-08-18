@@ -1,4 +1,6 @@
 using Application;
+using ApplicationServices.Implementation;
+using ApplicationServices.Interfaces;
 using AutoMapper;
 using DataAccess;
 using DataAccess.Interefaces;
@@ -32,7 +34,6 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApp", Version = "v1" });
@@ -49,9 +50,11 @@ namespace WebApp
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
 
             //Application
-            services.AddMediatR(typeof(CreateOrderCommand));
+            services.AddScoped<ISecurityService, SecurityService>();
 
             //Framework
+            services.AddControllers();
+            services.AddMediatR(typeof(CreateOrderCommand));
             services.AddAutoMapper(typeof(MapperProfile));
         }
 
