@@ -4,6 +4,8 @@ using DataAccess;
 using DataAccess.Interefaces;
 using Delivery.Company;
 using Delivery.Interfaces;
+using DomainServices.Implementation;
+using DomainServices.Interfaces;
 using Hangfire;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -37,6 +39,7 @@ namespace WebApp
             });
 
             //Domain
+            services.AddScoped<IOrderDomainService, OrderDomainService>();
 
             //Infrastructure
             services.AddScoped<IDeliveryService, DeliveryService>();

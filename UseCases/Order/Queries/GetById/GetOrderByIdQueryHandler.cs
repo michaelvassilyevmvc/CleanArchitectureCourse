@@ -2,6 +2,7 @@
 using AutoMapper;
 using DataAccess.Interefaces;
 using Delivery.Interfaces;
+using DomainServices.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -14,12 +15,14 @@ namespace UseCases.Order.Queries.GetById
     {
         private readonly IDbContext _dbContext;
         private readonly IDeliveryService _deliveryService;
+        private readonly IOrderDomainService _orderDomainService;
         private readonly IMapper _mapper;
 
-        public GetOrderByIdQueryHandler(IMapper mapper, IDbContext dbContext, IDeliveryService deliveryService)
+        public GetOrderByIdQueryHandler(IMapper mapper, IDbContext dbContext, IDeliveryService deliveryService, IOrderDomainService orderDomainService)
         {
             this._dbContext = dbContext;
             _deliveryService = deliveryService;
+            _orderDomainService = orderDomainService;
             this._mapper = mapper;
         }
 
@@ -33,9 +36,8 @@ namespace UseCases.Order.Queries.GetById
             if (order == null) throw new EntityNotFoundException();
 
             var dto = _mapper.Map<OrderDto>(order);
-            var totalWeight = order.Items.Sum(x => x.Product.Weight);
-            var deliveryCost = _deliveryService.CalculateDeliveryCost(totalWeight);
-            dto.Total = order.GetTotal() + deliveryCost;
+            dto.Total = _orderDomainService.GetTotal(order, _deliveryService.CalculateDeliveryCost);
+            
             return dto;
         }
     }

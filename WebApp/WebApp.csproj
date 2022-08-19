@@ -27,6 +27,8 @@
     <ProjectReference Include="..\DataAccess\DataAccess.MsSql.csproj" />
     <ProjectReference Include="..\Delivery.Company\Delivery.Company.csproj" />
     <ProjectReference Include="..\Delivery.Interfaces\Delivery.Interfaces.csproj" />
+    <ProjectReference Include="..\DomainServices.Implementation\DomainServices.Implementation.csproj" />
+    <ProjectReference Include="..\DomainServices.Interfaces\DomainServices.Interfaces.csproj" />
     <ProjectReference Include="..\UseCases\UseCases.csproj" />
     <ProjectReference Include="..\WebApp.Interfaces\WebApp.Interfaces.csproj" />
   </ItemGroup>
