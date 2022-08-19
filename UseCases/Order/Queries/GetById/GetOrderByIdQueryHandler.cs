@@ -1,14 +1,8 @@
 ﻿using Application;
 using AutoMapper;
 using DataAccess.Interefaces;
-using Delivery.Interfaces;
-using DomainServices.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,15 +12,11 @@ namespace UseCases.Order.Queries.GetById
     {
         private readonly IDbContext _dbContext;
         private readonly IMapper _mapper;
-        private readonly IOrderDomainService _orderDomainService;
-        private readonly IDeliveryService _deliveryService;
 
-        public GetOrderByIdQueryHandler(IMapper mapper, IDbContext dbContext, IOrderDomainService orderDomainService, IDeliveryService deliveryService)
+        public GetOrderByIdQueryHandler(IMapper mapper, IDbContext dbContext)
         {
             this._dbContext = dbContext;
             this._mapper = mapper;
-            this._orderDomainService = orderDomainService;
-            this._deliveryService = deliveryService;
         }
 
         public async Task<OrderDto> Handle(GetOrderByIdQuery query, CancellationToken cancellationToken)
@@ -39,7 +29,7 @@ namespace UseCases.Order.Queries.GetById
             if (order == null) throw new EntityNotFoundException();
 
             var dto = _mapper.Map<OrderDto>(order);
-            dto.Total = _orderDomainService.GetTotal(order, _deliveryService.CalculateDeliveryCost);
+            //dto.Total = _orderDomainService.GetTotal(order);
             return dto;
         }
     }

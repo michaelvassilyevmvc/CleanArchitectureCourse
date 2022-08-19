@@ -15,6 +15,11 @@ namespace Domain.Entities
 
         public ICollection<OrderItem> Items { get; set; }
 
+        public decimal GetTotal()
+        {
+            return Items.Sum(x => x.Product.Price);
+        }
+
        
     }
 }
