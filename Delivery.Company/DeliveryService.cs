@@ -13,5 +13,10 @@ namespace Delivery.Company
         {
             return (decimal)weight * 10;
         }
+
+        public Task<bool> IsDeliveryAsync(int orderId)
+        {
+            return Task.FromResult(true);
+        }
     }
 }

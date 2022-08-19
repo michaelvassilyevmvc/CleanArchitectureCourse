@@ -9,6 +9,7 @@ using Delivery.Interfaces;
 using DomainServices.Implementation;
 using DomainServices.Interfaces;
 using Email.Interfaces;
+using Hangfire;
 using Infrastructure.Implementation;
 using Infrastructure.Interefaces.WebApp;
 using MediatR;
@@ -19,7 +20,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Mobile.UseCases.Order.BackgroundJobs;
 using UserCases.Order.Commands.CreateOrder;
+using WebApp.Interfaces;
 using WebApp.Services;
 
 namespace WebApp
@@ -45,8 +48,9 @@ namespace WebApp
             services.AddScoped<IOrderDomainService, OrderDomainService>();
 
             //Infrastructure
+            services.AddScoped<IBackgroundJobService, BackgroundJobService>();
             services.AddScoped<IDeliveryService, DeliveryService>();
-            services.AddScoped<ICurrentUserService, CurrentUserService>();
+            services.AddScoped<WebApp.Interfaces.ICurrentUserService, CurrentUserService>();
             services.AddScoped<IEmailService, EmailService>();
             services.AddDbContext<IDbContext, AppDbContext>(builder =>
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
@@ -58,6 +62,8 @@ namespace WebApp
             services.AddControllers();
             services.AddMediatR(typeof(CreateOrderCommand));
             services.AddAutoMapper(typeof(MapperProfile));
+            services.AddHangfire(cfg => cfg.UseSqlServerStorage(Configuration.GetConnectionString("MsSql")));
+            services.AddHangfireServer();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -80,6 +86,11 @@ namespace WebApp
             {
                 endpoints.MapControllers();
             });
+
+            
+
+            RecurringJob.AddOrUpdate<UpdateDeliveryStatusJob>("UpdateDeliveryStatusJob",
+                (job)=>job.ExecuteAsync(), Cron.Minutely);
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-using Infrastructure.Interefaces.WebApp;
+﻿using WebApp.Interfaces;
 
 namespace WebApp.Services
 {
