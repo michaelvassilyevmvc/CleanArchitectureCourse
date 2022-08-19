@@ -1,4 +1,6 @@
 using Application;
+using ApplicationServices.Implementation;
+using ApplicationServices.Interfaces;
 using AutoMapper;
 using DataAccess;
 using DataAccess.Interefaces;
@@ -47,7 +49,8 @@ namespace WebApp
             services.AddDbContext<IDbContext, AppDbContext>(builder =>
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
 
-            //Application
+            //UseCases & Application
+            services.AddScoped<ISecurityService, SecurityService>();
 
             //Framework
             services.AddControllers();

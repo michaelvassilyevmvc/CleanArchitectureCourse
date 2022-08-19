@@ -8,7 +8,6 @@ namespace ApplicationServices.Interfaces
 {
     public interface ISecurityService
     {
-        public bool IsCurrentUserAdmin { get; }
-        string[] CurrentUserPermissions { get; }
+        
     }
 }

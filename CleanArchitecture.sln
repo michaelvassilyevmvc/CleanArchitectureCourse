@@ -27,15 +27,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 UseCases", "3 UseCases", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Controllers", "4 Controllers", "{C36905EC-F042-4BEB-A185-D68EBC5A05DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp.Interfaces", "WebApp.Interfaces\WebApp.Interfaces.csproj", "{E37E2160-8E96-4535-A17B-F3A245FEFF25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp.Interfaces", "WebApp.Interfaces\WebApp.Interfaces.csproj", "{E37E2160-8E96-4535-A17B-F3A245FEFF25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Interfaces", "Delivery.Interfaces\Delivery.Interfaces.csproj", "{537088AC-18FF-49FD-94CB-D9DBB32724BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Interfaces", "Delivery.Interfaces\Delivery.Interfaces.csproj", "{537088AC-18FF-49FD-94CB-D9DBB32724BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Delivery.Company", "Delivery.Company\Delivery.Company.csproj", "{5381BB81-BA93-413A-B842-6C0B2260C5D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Delivery.Company", "Delivery.Company\Delivery.Company.csproj", "{5381BB81-BA93-413A-B842-6C0B2260C5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainServices.Interfaces", "DomainServices.Interfaces\DomainServices.Interfaces.csproj", "{E40EDC58-369B-44E3-A4B0-5A9D9DC60ECA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainServices.Interfaces", "DomainServices.Interfaces\DomainServices.Interfaces.csproj", "{E40EDC58-369B-44E3-A4B0-5A9D9DC60ECA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainServices.Implementation", "DomainServices.Implementation\DomainServices.Implementation.csproj", "{9A82FE85-5B90-41D0-BA23-3897EF816E91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainServices.Implementation", "DomainServices.Implementation\DomainServices.Implementation.csproj", "{9A82FE85-5B90-41D0-BA23-3897EF816E91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServices.Interfaces", "ApplicationServices.Interfaces\ApplicationServices.Interfaces.csproj", "{C4463990-EA93-4FC1-8D79-11F4C79079EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationServices.Implementation", "ApplicationServices.Implementation\ApplicationServices.Implementation.csproj", "{8DF94F19-A661-4454-A7F0-A53D4D5EF65C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{9A82FE85-5B90-41D0-BA23-3897EF816E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A82FE85-5B90-41D0-BA23-3897EF816E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A82FE85-5B90-41D0-BA23-3897EF816E91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4463990-EA93-4FC1-8D79-11F4C79079EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4463990-EA93-4FC1-8D79-11F4C79079EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4463990-EA93-4FC1-8D79-11F4C79079EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4463990-EA93-4FC1-8D79-11F4C79079EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DF94F19-A661-4454-A7F0-A53D4D5EF65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DF94F19-A661-4454-A7F0-A53D4D5EF65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DF94F19-A661-4454-A7F0-A53D4D5EF65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DF94F19-A661-4454-A7F0-A53D4D5EF65C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -102,6 +114,8 @@ Global
 		{5381BB81-BA93-413A-B842-6C0B2260C5D6} = {5A22CF7B-D368-4C0B-83DF-7DF403717620}
 		{E40EDC58-369B-44E3-A4B0-5A9D9DC60ECA} = {5B834B8F-7246-4FE6-B2FC-CE77BABABCC5}
 		{9A82FE85-5B90-41D0-BA23-3897EF816E91} = {5B834B8F-7246-4FE6-B2FC-CE77BABABCC5}
+		{C4463990-EA93-4FC1-8D79-11F4C79079EA} = {FA142F89-4790-416C-BAA0-07541771DE1F}
+		{8DF94F19-A661-4454-A7F0-A53D4D5EF65C} = {FA142F89-4790-416C-BAA0-07541771DE1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {50EFF866-D6DB-445F-BF87-59AB69F37CF7}

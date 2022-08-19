@@ -23,6 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApplicationServices.Implementation\ApplicationServices.Implementation.csproj" />
+    <ProjectReference Include="..\ApplicationServices.Interfaces\ApplicationServices.Interfaces.csproj" />
     <ProjectReference Include="..\DataAccess.Intereface\DataAccess.Interefaces.csproj" />
     <ProjectReference Include="..\DataAccess\DataAccess.MsSql.csproj" />
     <ProjectReference Include="..\Delivery.Company\Delivery.Company.csproj" />

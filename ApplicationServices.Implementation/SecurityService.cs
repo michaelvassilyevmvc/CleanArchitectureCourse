@@ -7,10 +7,8 @@ using System.Threading.Tasks;
 
 namespace ApplicationServices.Implementation
 {
-    public class SecurityService : ISecurityService
+    public class SecurityService:ISecurityService
     {
-        public bool IsCurrentUserAdmin { get; }
-
-        public string[] CurrentUserPermissions { get; }
+        
     }
 }
