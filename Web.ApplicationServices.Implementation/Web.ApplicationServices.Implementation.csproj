@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ApplicationServices.Interfaces\ApplicationServices.Interfaces.csproj" />
     <ProjectReference Include="..\Web.ApplicationServices.Interfaces\Web.ApplicationServices.Interfaces.csproj" />
   </ItemGroup>
 

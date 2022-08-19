@@ -17,7 +17,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Telemetry.Implementation;
+using Telemetry.Interfaces;
 using UserCases.Order.Commands.CreateOrder;
+using Web.ApplicationServices.Implementation;
+using Web.ApplicationServices.Interfaces;
 using WebApp.Interfaces;
 using WebApp.Services;
 
@@ -48,6 +52,13 @@ namespace WebApp
             services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddDbContext<IDbContext, AppDbContext>(builder =>
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
+
+            //Mobile Infrastructure
+            services.AddScoped<ITelemetryService, TelemetryService>();
+
+            //Web Infrastructure
+            services.AddScoped<IWebApplicationService, WebApplicationService>();
+
 
             //UseCases & Application
             services.AddScoped<ISecurityService, SecurityService>();

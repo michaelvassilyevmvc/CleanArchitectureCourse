@@ -31,7 +31,10 @@
     <ProjectReference Include="..\Delivery.Interfaces\Delivery.Interfaces.csproj" />
     <ProjectReference Include="..\DomainServices.Implementation\DomainServices.Implementation.csproj" />
     <ProjectReference Include="..\DomainServices.Interfaces\DomainServices.Interfaces.csproj" />
-    <ProjectReference Include="..\UseCases\UseCases.csproj" />
+    <ProjectReference Include="..\Mobile.Controllers\Mobile.Controllers.csproj" />
+    <ProjectReference Include="..\Telemetry.Implementation\Mobile.Telemetry.Implementation.csproj" />
+    <ProjectReference Include="..\UseCases\Mobile.UseCases.csproj" />
+    <ProjectReference Include="..\Web.ApplicationServices.Implementation\Web.ApplicationServices.Implementation.csproj" />
     <ProjectReference Include="..\WebApp.Interfaces\WebApp.Interfaces.csproj" />
   </ItemGroup>
 

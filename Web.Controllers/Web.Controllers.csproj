@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Web.ApplicationServices.Interfaces\Web.ApplicationServices.Interfaces.csproj" />
+    <ProjectReference Include="..\Web.UseCases\Web.UseCases.csproj" />
   </ItemGroup>
 
 </Project>
