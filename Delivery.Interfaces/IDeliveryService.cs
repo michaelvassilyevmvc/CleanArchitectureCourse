@@ -8,7 +8,6 @@ namespace Delivery.Interfaces
 {
     public interface IDeliveryService
     {
-        decimal CalculateDeliveryCost(float weight);
-        Task<bool> IsDeliveryAsync(int orderId);
+        public decimal CalculateDeliveryCost(float weight);
     }
 }

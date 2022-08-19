@@ -10,7 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DataAccess.Intereface\Infrastructure.Interefaces.csproj" />
+    <ProjectReference Include="..\DataAccess.Intereface\DataAccess.Interefaces.csproj" />
+    <ProjectReference Include="..\Delivery.Interfaces\Delivery.Interfaces.csproj" />
+    <ProjectReference Include="..\WebApp.Interfaces\WebApp.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

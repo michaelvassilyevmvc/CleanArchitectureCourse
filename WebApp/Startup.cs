@@ -2,6 +2,8 @@ using Application;
 using AutoMapper;
 using DataAccess;
 using DataAccess.Interefaces;
+using Delivery.Company;
+using Delivery.Interfaces;
 using Hangfire;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -12,6 +14,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using UserCases.Order.Commands.CreateOrder;
+using WebApp.Interfaces;
 using WebApp.Services;
 
 namespace WebApp
@@ -36,7 +39,8 @@ namespace WebApp
             //Domain
 
             //Infrastructure
-            services.AddScoped<WebApp.Interfaces.ICurrentUserService, CurrentUserService>();
+            services.AddScoped<IDeliveryService, DeliveryService>();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
             services.AddDbContext<IDbContext, AppDbContext>(builder =>
                 builder.UseSqlServer(Configuration.GetConnectionString("MsSql")));
 
